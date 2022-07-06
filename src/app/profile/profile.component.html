@@ -109,7 +109,7 @@
                       <i style="color: green" class="fa fa-check"></i>
                     </td>
                     <td>
-                      <button disabled class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
+                      <button data-bs-toggle="modal" data-bs-target="#exampleModal" disabled class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
                       Payer
                     </button>
                     </td>
@@ -122,7 +122,7 @@
                       <i style="color: green" class="fa fa-check"></i>
                     </td>
                     <td>
-                      <button disabled class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
+                      <button data-bs-toggle="modal" data-bs-target="#exampleModal" disabled class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
                         Payer
                       </button>
                     </td>
@@ -135,7 +135,7 @@
                       <i  style="color: darkred" class="fa fa-lock"></i>
                     </td>
                     <td>
-                      <button   class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
+                      <button data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
                         Payer
                       </button>
                     </td>
@@ -148,7 +148,7 @@
                       <i style="color: green" class="fa fa-check"></i>
                     </td>
                     <td>
-                      <button disabled class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
+                      <button data-bs-toggle="modal" data-bs-target="#exampleModal" disabled class="btn btn-primary"> <i class="fa fa-dollar-sign"></i>
                         Payer
                       </button>
                     </td>
@@ -200,67 +200,6 @@
             </article>
           </div>
 
-          <div
-            id="llanfairpwllgwyngyll-left"
-            class="tab-pane fade accordion-item"
-            role="tabpanel"
-          >
-            <div class="accordion-header" role="tab">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                role="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#llanfairpwllgwyngyll-left-article"
-                aria-expanded="false"
-                aria-controls="llanfairpwllgwyngyll-left-article"
-              >
-                <!-- Use the ellipsis class for long text in accordion buttons -->
-                <div class="ellipsis">
-                  Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch
-                </div>
-              </button>
-            </div>
-            <article
-              id="llanfairpwllgwyngyll-left-article"
-              class="accordion-body accordion-collapse collapse"
-              data-bs-parent="#accordion-left-tabs"
-              aria-labelledby="llanfairpwllgwyngyll-left-tab"
-            >
-              <h1>
-                Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch
-              </h1>
-              <section>
-                <p>
-                  <small>From Wikipedia, the free encyclopedia</small>
-                </p>
-              </section>
-              <section>
-                <p>
-                  Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch
-                  (pronounced
-                  [ˌɬanvair­pʊɬˌɡwɨ̞ŋɡɨ̞ɬ­ɡɔˌɡɛrə­ˌχwərn­ˌdrɔbʊɬ­ˌɬan­təˌsɪljɔ­ˌɡɔɡɔ­ˈɡoːχ]
-                  in Welsh), official short form name Llanfairpwllgwyngyll
-                  (pronounced [ɬanˌvair puɬˈɡwɨ̞nɡɨ̞ɬ]), also spelled Llanfair
-                  Pwllgwyngyll, is a large village and local government
-                  community on the island of Anglesey in Wales. It is
-                  situated on the Menai Strait next to the Britannia Bridge
-                  and across the strait from Bangor. While the official
-                  short form name is used in official contexts, both the
-                  full name and shortened (Llanfairpwll or Llanfair PG)
-                  forms of the place name are used in various contexts.
-                </p>
-                <p>
-                  <a
-                    href="https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll"
-                    target="_blank"
-                    title="Open Wikipedia article in a new tab."
-                  >Full article &gt;</a
-                  >
-                </p>
-              </section>
-            </article>
-          </div>
         </div>
       </div>
     </div>
@@ -270,3 +209,37 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: #0f5132" id="exampleModalLabel" >(+509) 4990-7709</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div style="margin: 0px auto; text-align: center" class="mb-3">
+         <img class="w-50" src="../../assets/images/btn.png" alt="btn_icon">
+       </div>
+        <div class="input-group mb-3 w-75 m-auto">
+          <span class="input-group-text">HTG</span>
+          <input disabled type="text" class="form-control" value="10000">
+          <span class="input-group-text">.00</span>
+        </div>
+        <div class="input-group mb-3 w-75 m-auto">
+          <span class="input-group-text">(509)</span>
+          <input  type="text" class="form-control" value="" placeholder="Entrer votre numero">
+          <span class="input-group-text">Haiti</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          <i class="fa fa-arrow-right"></i>
+          Quitter</button>
+        <button (click)="payer()" type="button" class="btn btn-primary">
+          <i class="fa fa-file-invoice-dollar"></i>
+          Payer</button>
+      </div>
+    </div>
+  </div>
+</div>
