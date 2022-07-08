@@ -10,7 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
-
+import {HttpClientModule} from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { SocialLoginModule} from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +23,13 @@ import {FormsModule} from "@angular/forms";
     ProfileComponent,
     HomeComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        RouterModule,
-        FormsModule,ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule, BrowserAnimationsModule, MatProgressSpinnerModule,SocialLoginModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

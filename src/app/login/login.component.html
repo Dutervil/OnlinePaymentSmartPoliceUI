@@ -3,16 +3,18 @@
     <div class="card">
       <div class="card-header">Authentification</div>
       <div class="card-body">
-        <div class="form-group">
-          <label>Nom d'utilisateur</label>
-          <input class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Mot de pass</label>
-          <input class="form-control">
-          <a href="" >Mot de pass oublié ? </a>
-        </div>
-        <button class="btn" style="background-color: #0092ff; color: white "> <i class="fa fa-arrows-alt-h"></i> Se Connecter</button>
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <label>Nom d'utilisateur</label>
+            <input formControlName="username" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Mot de pass</label>
+            <input formControlName="password" class="form-control">
+            <a href="" >Mot de pass oublié ? </a>
+          </div>
+          <button (click)="login()" class="btn" style="background-color: #0092ff; color: white "> <i class="fa fa-arrows-alt-h"></i> Se Connecter</button>
+        </form>
       </div>
     </div>
   </div>
