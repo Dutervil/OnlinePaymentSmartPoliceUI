@@ -13,7 +13,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import { SocialLoginModule} from 'angularx-social-login';
+import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,24 @@ import { SocialLoginModule} from 'angularx-social-login';
     HttpClientModule,
     FormsModule, ReactiveFormsModule, BrowserAnimationsModule, MatProgressSpinnerModule,SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue:{
+        authLogin:false,
+        providers:[
+          {
+           id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '245323199596-50mf1170ebam27ej30vmojkbim31lpqf.apps.googleusercontent.com',
+
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig
+
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
