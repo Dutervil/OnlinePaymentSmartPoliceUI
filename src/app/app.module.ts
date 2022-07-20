@@ -8,12 +8,19 @@ import { AvisComponent } from './avis/avis.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from 'angularx-social-login';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider, SocialAuthService,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from 'angularx-social-login';
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,24 +37,32 @@ import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from 'a
     HttpClientModule,
     FormsModule, ReactiveFormsModule, BrowserAnimationsModule, MatProgressSpinnerModule,SocialLoginModule
   ],
+
   providers: [
     {
       provide: 'SocialAuthServiceConfig',
-      useValue:{
-        authLogin:false,
-        providers:[
+      useValue: {
+        autoLogin: false,
+        providers: [
           {
-           id: GoogleLoginProvider.PROVIDER_ID,
+            id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '245323199596-50mf1170ebam27ej30vmojkbim31lpqf.apps.googleusercontent.com',
-
+              '245323199596-50mf1170ebam27ej30vmojkbim31lpqf.apps.googleusercontent.com'
             )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('351273390521644')
           }
-        ]
-      } as SocialAuthServiceConfig
-
-    }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    },
+  SocialAuthService,
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

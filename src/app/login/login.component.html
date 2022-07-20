@@ -18,11 +18,24 @@
         <p class="text-center">
           <span>or</span>
         </p>
-        <button class="btn btn-block goole-sign-in">
-          <img [src]="'assets/images/google.svg'" alt="logo">
-          <span>Continuer avec Google</span>
+        <button class="btn btn-block google-sign-in" (click)="signInHandler()">
+          <img [src]="'assets/images/google.svg'" alt="google"/>
+          <span>Continue with Google</span>
         </button>
+
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>About Me</h4>
+      <h3>{{user.name}}</h3>
+      <h5>Photo of me:</h5>
+      <div class="fakeimg"><img src="{{user.response.picture.data.url}}"></div>
+      <button (click)="signInWithFB()" class="btn btn-primary">Login Facebook</button>
     </div>
   </div>
 </div>
